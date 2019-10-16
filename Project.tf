@@ -1,3 +1,12 @@
+#Terraform Declaration
+terraform {
+  backend "s3" {
+    bucket = "terraform-jenkins-s3"
+    key    = "terraform.tfstate"
+    region = "us-east-1"
+  }
+}
+
 #setup Provider
 provider "aws" {
   region = "${var.aws_region}"
