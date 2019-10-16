@@ -60,15 +60,11 @@ resource "aws_route" "internet_access" {
   
 }
 
-#Create EIP for Internet Gateway
-resource "aws_eip" "tuto_eip" {
-  vpc      = true
-  depends_on = ["aws_internet_gateway.gw"]
-}
+
 
 #Create NAT GW
 resource "aws_nat_gateway" "nat" {
-    allocation_id = "${aws_eip.tuto_eip.id}"
+    allocation_id = "3.216.22.73"
     subnet_id = "${aws_subnet.public_subnet_us-east-1a.id}"
     depends_on = ["aws_internet_gateway.gw"]
     tags = {
