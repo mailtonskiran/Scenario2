@@ -8,14 +8,7 @@ variable "aws_region" {
   description = "AWS region for hosting our your network"
   default = "us-east-1"
 }
-variable "access_key"{
-description = "AWS Access Key"
-default = "Your Access Key"
-}
-variable "secret_key"{
-description = "AWS Secret Key"
-default = "Your Secret Key"
-}
+
 variable "amis" {
     description = "AMIs by region"
     default = {
@@ -34,13 +27,10 @@ variable "private_subnet_cidr" {
     description = "CIDR for the Private Subnet"
     default = "10.0.1.0/24"
 }
-variable "aws_key_path" {
-  description = "Enter the path to the SSH Public Key to add to AWS."
-  default = "Your pet location"
-}
+
 variable "aws_key_name" {
   description = "Key name for SSHing into EC2"
-  default = "Your key name"
+  default = "blockchain"
 }
 variable "aws_availability_zones" {
   default     = "us-east-1a,us-east-1b,us-east-1c,us-east-1d"
